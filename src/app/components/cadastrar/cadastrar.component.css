@@ -1,0 +1,16 @@
+.cadastro-container {
+    padding: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  button {
+    align-self: flex-start;
+  }
+  

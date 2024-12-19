@@ -1,1 +1,28 @@
-<p>consultar works!</p>
+<div class="consultar-container">
+    <h2>Consultar</h2>
+
+    <!-- formulário de busca -->
+     <form (submit)="Buscar($event)">
+        <label for="busca">Buscar:</label>
+        <input id="busca" type="text" placeholder="Digite sua pesquisa" [(ngModel)]="termoDeBusca" name="busca" />
+        <button type="submit">Pesquisar</button>
+     </form>
+
+     <!-- tabela dinâmica -->
+     <table>
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Carros</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let registro of registrosFiltrados">
+                <td>{{ registro.nome }}</td>
+                <td>{{ registro.cpf }}</td>
+                <td>{{ registro.carro }}</td>
+            </tr>
+        </tbody>
+     </table>
+</div>

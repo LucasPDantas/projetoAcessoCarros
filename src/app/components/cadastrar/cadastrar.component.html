@@ -1,1 +1,50 @@
-<p>cadastrar works!</p>
+<div class="cadastro-container">
+    <h2>Cadastro</h2>
+    <mat-tab-group>
+      <!-- Aba para Cadastrar Aluno -->
+      <mat-tab label="Cadastrar Aluno">
+        <form>
+          <label for="nome">Nome:</label>
+          <input id="nome" type="text" placeholder="Digite o nome" />
+          <label for="cpf">CPF:</label>
+          <input id="cpf" type="text" placeholder="Digite o CPF" />
+          <label for="dataNascimento">Data de Nascimento:</label>
+          <input id="dataNascimento" type="date" />
+          <button (click)="cadastrarAluno()">Cadastrar Aluno</button>
+        </form>
+      </mat-tab>
+  
+      <!-- Aba para Cadastrar Carro -->
+      <mat-tab label="Cadastrar Carro">
+        <form>
+          <label for="placa">Placa:</label>
+          <input id="placa" type="text" placeholder="Digite a placa" />
+          <label for="modelo">Modelo:</label>
+          <input id="modelo" type="text" placeholder="Digite o modelo" />
+          <label for="marca">Marca:</label>
+          <input id="marca" type="text" placeholder="Digite a marca" />
+          <button (click)="cadastrarCarro()">Cadastrar Carro</button>
+        </form>
+      </mat-tab>
+  
+      <!-- Aba para Vincular Carro ao Aluno/Responsável -->
+      <mat-tab label="Vincular Carro ao Aluno">
+        <form>
+          <label for="aluno">Aluno:</label>
+          <select id="aluno">
+            <option *ngFor="let aluno of alunos" [value]="aluno.id">
+              {{ aluno.nome }}
+            </option>
+          </select>
+          <label for="carro">Carro:</label>
+          <select id="carro">
+            <option *ngFor="let carro of carros" [value]="carro.id">
+              {{ carro.placa }}
+            </option>
+          </select>
+          <button (click)="vincularCarro()">Vincular</button>
+        </form>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+  

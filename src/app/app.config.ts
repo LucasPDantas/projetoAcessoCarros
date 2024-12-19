@@ -6,6 +6,7 @@ import { ConsultarComponent } from './components/consultar/consultar.component';
 
 import { routes } from './app.routes';
 import { provideClientHydration, withEventReplay } from '@angular/platform-browser';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 // import { provideForms } from '@angular/forms';
 
 export const appConfig: ApplicationConfig = {
@@ -13,6 +14,6 @@ export const appConfig: ApplicationConfig = {
     provideZoneChangeDetection({ eventCoalescing: true }), 
     provideRouter(routes), 
     // provideForms(), 
-    provideClientHydration(withEventReplay())
+    provideClientHydration(withEventReplay()), provideAnimationsAsync()
   ]
 };

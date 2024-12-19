@@ -1,1 +1,13 @@
-<p>login works!</p>
+<div class="login-container">
+    <h2>Login</h2>
+    <form>
+      <label for="username">Usuário:</label>
+      <input id="username" type="text" placeholder="Digite seu usuário" [(ngModel)]="username" name="username" />
+  
+      <label for="password">Senha:</label>
+      <input id="password" type="password" placeholder="Digite sua senha" [(ngModel)]="password" name="password" />
+  
+      <button (click)="onLogin()">Entrar</button>
+    </form>
+  </div>
+  
